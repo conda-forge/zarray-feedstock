@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -32,9 +32,9 @@ test:
     - test -f ${PREFIX}/include/zarray/zarray.hpp  # [unix]
     - test -f ${PREFIX}/lib/cmake/zarray/zarrayConfig.cmake  # [unix]
     - test -f ${PREFIX}/lib/cmake/zarray/zarrayConfigVersion.cmake  # [unix]
-    - if exist %LIBRARY_PREFIX%\include\zarray\zarray.hpp (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\lib\cmake\zarrayConfig.cmake (exit 0) else (exit 1)  # [win]
-    - if exist %LIBRARY_PREFIX%\lib\cmake\zarrayConfigVersion.cmake (exit 0) else (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\include\zarray\zarray.hpp (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\lib\cmake\zarray\zarrayConfig.cmake (exit 1)  # [win]
+    - if not exist %LIBRARY_PREFIX%\lib\cmake\zarray\zarrayConfigVersion.cmake (exit 1)  # [win]
 
 about:
   home: http://quantstack.net/xtensor
@@ -51,3 +51,4 @@ extra:
     - davidbrochart
     - SylvainCorlay
     - JohanMabille
+    - conda-forge/xtensor
