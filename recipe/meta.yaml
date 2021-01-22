@@ -21,10 +21,12 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - xtensor >=0.23.0,<0.24
+    - nlohmann_json >=3.2.0
   run:
     # header-only packages don't have
     # a run_exports section
     - {{ pin_compatible('xtensor', max_pin='x.x') }}
+    - {{ pin_compatible('nlohmann_json', max_pin='x.x') }}
 
 test:
   commands:
