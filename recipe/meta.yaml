@@ -1,6 +1,6 @@
 {% set name = "zarray" %}
-{% set version = "0.0.2" %}
-{% set sha256 = "8492e5d903e41f69d6eacdc8b616eb19f982d215c83812e17db3dff51ae6c6fb" %}
+{% set version = "0.0.3" %}
+{% set sha256 = "dd9b285acbbf95ce37296548418fe91a6bc285653811f5ee569a26ece30cf3e3" %}
 
 package:
   name: {{ name|lower }}
@@ -20,7 +20,7 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
   host:
-    - xtensor >=0.21.9
+    - xtensor >=0.23.0,<0.24
   run:
     # header-only packages don't have
     # a run_exports section
