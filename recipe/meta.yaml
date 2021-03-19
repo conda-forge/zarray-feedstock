@@ -1,6 +1,6 @@
 {% set name = "zarray" %}
-{% set version = "0.0.3" %}
-{% set sha256 = "dd9b285acbbf95ce37296548418fe91a6bc285653811f5ee569a26ece30cf3e3" %}
+{% set version = "0.0.4" %}
+{% set sha256 = "7ad89b377bad8fae8a935ca3bf2911a8ab02753c44cdd0c08a2b79f4c3424af0" %}
 
 package:
   name: {{ name|lower }}
